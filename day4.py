@@ -1,5 +1,3 @@
-import re
-
 sum = []
 total = 0
 with open('day4.txt') as f:
@@ -24,7 +22,7 @@ with open('day4.txt') as f:
                 new = chr(((change + ord(j)) % 26)+97)
                 message = message + new
             message = message + ' '
-        if re.match('north', message):
+        if 'north' in message:
             print "The sector id of the north pole objects storage is:" + str(code[-1])
                 #END OF PART TWO
                 
@@ -42,7 +40,3 @@ for numbers in sum:
     total = total + int(numbers)
             
 print "The total sum of sector ids is: " + str(total)
-
-
-                
-                
