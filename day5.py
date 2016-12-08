@@ -8,13 +8,6 @@ password = ''
 password2 = [0,0,0,0,0,0,0,0]
 used = []
 
-def is_number(s):
-    try:
-        float(s)
-        return True
-    except ValueError:
-        return False
-    
 while counter2 < 8:
     combo = code + str(index)
     hexmd5 = hashlib.md5(combo).hexdigest() 
@@ -22,7 +15,7 @@ while counter2 < 8:
         password = password + hexmd5[5]
         counter += 1
         #Part Two
-        if is_number(hexmd5[5]) and int(hexmd5[5]) < 8:
+        if hexmd5[5] in '01234567':
             ihex = int(hexmd5[5])
             if ihex in used:
                 index += 1
